@@ -10,10 +10,12 @@ RUN apt-get update && apt-get install -y \
 
 ENV PARSE_HOME /parse
 ENV PARSE_CLOUD /parse/parse-cloud
+ENV PARSE_SERVER_CLOUD_CODE_MAIN /parse/parse-cloud/cloud/main.js
 
 ADD start.sh ${PARSE_HOME}/start.sh
 ADD index.js ${PARSE_HOME}/index.js
 ADD package.json ${PARSE_HOME}/package.json
+ADD pm2_parse_server.json ${PARSE_HOME}/pm2_parse_server.json
 
 COPY parse-cloud $PARSE_CLOUD
 

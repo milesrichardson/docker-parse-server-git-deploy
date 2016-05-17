@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "parse-server",
+      "cwd": "/parse/",
+      "script": "index.js",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "instances": "6",
+      "max_memory_restart": "500M",
+      "exec_interpreter": "node",
+      "exec_mode": "cluster",
+      "autorestart": true
+    }
+  ]
+}
+

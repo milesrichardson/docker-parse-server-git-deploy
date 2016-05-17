@@ -24,6 +24,7 @@ if [[ ! -d "$REPO_PATH" ]]; then
 
 echo "killing node server..."
 pkill -15 node
+pkill -15 pm2
 EOF
 
   chmod +x $REPO_PATH/hooks/post-receive
@@ -37,9 +38,11 @@ fi
 # Add authorized keys
 cat /srv/keys/* > /root/.ssh/authorized_keys 2> /dev/null
 
+
+
 while true
 do
-  # Get the parse-cloud folder
+ Get the parse-cloud folder
   if [[ $first_start == false ]]; then
     cd $PARSE_HOME/parse-cloud
     rm -fr ./* ./.*
@@ -51,5 +54,6 @@ do
   npm start
 
   echo "restarting server"
+
   first_start=false
 done

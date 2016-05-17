@@ -36,7 +36,8 @@ const api = new ParseServer({
   javascriptKey: process.env.JAVASCRIPT_KEY,
   dotNetKey: process.env.DOTNET_KEY,
   fileKey: process.env.FILE_KEY,
-  facebookAppIds: facebookAppIds
+  facebookAppIds: facebookAppIds,
+  serverURL: process.env.SERVER_URL
 });
 
 const app = express();
